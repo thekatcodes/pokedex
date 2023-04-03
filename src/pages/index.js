@@ -4,8 +4,12 @@
 // import styles from '../styles/main.scss'
 // const inter = Inter({ subsets: ['latin'] })
 
+import Layout from "./components/Layout";
+
 function HomePage() {
-	return <h1 className="text-3xl font-bold underline">Hello world!</h1>;
+    return (<Layout>
+              <h1>Welcome to my Next.js app!</h1>
+    </Layout>)
 }
 
 export default HomePage;
