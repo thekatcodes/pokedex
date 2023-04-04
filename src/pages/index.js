@@ -1,14 +1,26 @@
-// import Head from 'next/head'
-// import Image from 'next/image'
-// import { Inter } from 'next/font/google'
-// import styles from '../styles/main.scss'
-// const inter = Inter({ subsets: ['latin'] })
-
+import React from "react";
+import { useState } from "react";
 import Layout from "./components/Layout";
+import PokemonCard from "./PokemonCard";
+
 
 function HomePage() {
+
+    const [pokemonData, setPokemonData] = useState([])
+    //function to fetch pokemon data & set pokemon state
+    const fetchPokemon = async (value) => {
+        try {
+            const result = await axios.get(`https://pokeapi.co/api/v2/pokemon/${value}`);
+            console.log(result.data);
+            setPokemonData(result.data);
+        } catch (error) {
+            console.log(error);
+        }
+    
+    }
     return (<Layout>
-              <h1>Welcome to my Next.js app!</h1>
+        <h1>Welcome to my Next.js app!</h1>
+        <PokemonCard pokemonData={pokemonData} />
     </Layout>)
 }
 
