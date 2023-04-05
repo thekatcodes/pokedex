@@ -5,7 +5,14 @@ import Navbar from "./components/Navbar";
 import PokemonCard from "./PokemonCard";
 
 function HomePage() {
+	const [searchValue, setSearchValue] = useState("");
 	const [pokemonData, setPokemonData] = useState([]);
+
+	// Set value of search state everytime the input field changes
+	const searchInput = (event) => {
+		setSearchValue(event.target.value);
+	};
+	console.log(searchValue);
 
 	//function to fetch pokemon data & set pokemon state
 	const fetchPokemon = async (value) => {
@@ -21,12 +28,12 @@ function HomePage() {
 	};
 
 	return (
-		//     <Layout>
-		//     <h1>Welcome to my Next.js app!</h1>
-		// </Layout>
 		<>
-			<Navbar />
-            <PokemonCard pokemonData={pokemonData} fetchPokemon={fetchPokemon} />
+            <Navbar searchValue={searchValue} searchInput={searchInput} />
+			<PokemonCard
+				pokemonData={pokemonData}
+				fetchPokemon={fetchPokemon}
+			/>
 			<Footer />
 		</>
 	);
