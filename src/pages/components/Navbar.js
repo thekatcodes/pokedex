@@ -11,13 +11,16 @@ export default function Navbar() {
     }
     console.log(search)
 
-	return (
+
+    return (
+        <>
 		<input
 			className="search-field"
 			type="search"
 			value={search}
 			placeholder="Search Pokémon"
 			onChange={(event) => searchInput(event)}
-		></input>
+            ></input>
+        </>
 	);
 }
