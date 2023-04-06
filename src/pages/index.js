@@ -9,24 +9,42 @@ function HomePage() {
 	const [pokemonData, setPokemonData] = useState([]);
 
 	//function to fetch pokemon data & set pokemon state
-	const fetchPokemon = async (value) => {
-		try {
-			const result = await axios.get(
-				`https://pokeapi.co/api/v2/pokemon/${value}`,
-				{
-					headers: {
-						Accept: "application/json",
-						"Accept-Encoding": "identity",
-					},
-				}
-			);
-			console.log(result.data);
-			setPokemonData(result.data);
-		} catch (error) {
-			console.log(error);
-		}
+    const fetchPokemon = async (value) => {
+        if (value) {
+            try {
+                const result = await axios.get(
+                    `https://pokeapi.co/api/v2/pokemon/${value}`,
+                    {
+                        headers: {
+                            Accept: "application/json",
+                            "Accept-Encoding": "identity",
+                        },
+                    }
+                );
+                console.log([result.data]);
+                setPokemonData([result.data]);
+            } catch (error) {
+                console.log(error);
+            }
+        } else {
+            try {
+                const result = await axios.get(
+                    `https://pokeapi.co/api/v2/pokemon/`,
+                    {
+                        headers: {
+                            Accept: "application/json",
+                            "Accept-Encoding": "identity",
+                        },
+                    }
+                );
+                console.log(result.data.results);
+                setPokemonData(result.data.results);
+            } catch (error) {
+                console.log(error);
+            }
+        }
 	};
-
+console.log("INDEX", pokemonData)
 	return (
 		<>
 			<Navbar
