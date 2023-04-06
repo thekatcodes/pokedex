@@ -1,19 +1,12 @@
 import React, { useState } from "react";
-import Footer from "./components/Footer";
 import axios from "axios";
-// import Layout from "./components/Layout";
+import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import PokemonCard from "./PokemonCard";
 
 function HomePage() {
-	const [searchValue, setSearchValue] = useState("");
-	const [pokemonData, setPokemonData] = useState([]);
 
-	// Set searchValue state everytime the input field changes
-	const searchInput = (event) => {
-		setSearchValue(event.target.value);
-	};
-	console.log(searchValue);
+	const [pokemonData, setPokemonData] = useState([]);
 
 	//function to fetch pokemon data & set pokemon state
 	const fetchPokemon = async (value) => {
@@ -37,12 +30,10 @@ function HomePage() {
 	return (
 		<>
 			<Navbar
-				searchValue={searchValue}
-				searchInput={searchInput}
+				fetchPokemon={fetchPokemon}
 			/>
 			<PokemonCard
 				pokemonData={pokemonData}
-				fetchPokemon={fetchPokemon}
 			/>
 			<Footer />
 		</>
