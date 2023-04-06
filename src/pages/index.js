@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Footer from "./components/Footer";
+import axios from "axios";
 // import Layout from "./components/Layout";
 import Navbar from "./components/Navbar";
 import PokemonCard from "./PokemonCard";
@@ -8,7 +9,7 @@ function HomePage() {
 	const [searchValue, setSearchValue] = useState("");
 	const [pokemonData, setPokemonData] = useState([]);
 
-	// Set value of search state everytime the input field changes
+	// Set searchValue state everytime the input field changes
 	const searchInput = (event) => {
 		setSearchValue(event.target.value);
 	};
@@ -18,7 +19,13 @@ function HomePage() {
 	const fetchPokemon = async (value) => {
 		try {
 			const result = await axios.get(
-				`https://pokeapi.co/api/v2/pokemon/${value}`
+				`https://pokeapi.co/api/v2/pokemon/${value}`,
+				{
+					headers: {
+						Accept: "application/json",
+						"Accept-Encoding": "identity",
+					},
+				}
 			);
 			console.log(result.data);
 			setPokemonData(result.data);
@@ -29,7 +36,10 @@ function HomePage() {
 
 	return (
 		<>
-            <Navbar searchValue={searchValue} searchInput={searchInput} />
+			<Navbar
+				searchValue={searchValue}
+				searchInput={searchInput}
+			/>
 			<PokemonCard
 				pokemonData={pokemonData}
 				fetchPokemon={fetchPokemon}
