@@ -1,8 +1,9 @@
-import React from "react";
+import React, { useState } from "react";
 import Modal from "./components/Modal";
 
 export default function PokemonCard(props) {
 	const { pokemonData } = props;
+	const [showModal, setShowModal] = useState(false);
 
 	console.log("POKEMONCARD", pokemonData);
 
@@ -34,10 +35,15 @@ export default function PokemonCard(props) {
 									{pokemon.name}
 								</h3>
 							</div>
+							<button
+								onClick={() => setShowModal(true)}
+							>
+								Show details
+							</button>
 						</div>
 					))}
 				</div>
-				<Modal />
+				<Modal showModal={showModal} onClose={() => setShowModal(false)}/>
 			</>
 		);
 	}
