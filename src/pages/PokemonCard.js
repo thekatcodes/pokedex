@@ -1,4 +1,5 @@
 import React from "react";
+import Modal from "./components/Modal";
 
 export default function PokemonCard(props) {
 	const { pokemonData } = props;
@@ -13,9 +14,9 @@ export default function PokemonCard(props) {
 						className="relative max-w-sm border-solid border-2 border-grey-100 rounded-2xl overflow-visible shadow-lg h-20 mt-6 mb-6 flex items-center justify-around"
 						key={pokemon.id}
 					>
-						<div className="absolute -top-7 -left-6 w-1/2 h-full overflow-visible">
+						<div className="absolute -top-4 -left-6 w-1/2 h-full overflow-visible">
 							<img
-								className="absolute -top-7 -left-6 z-10 h-30"
+								className="absolute -top-4 -left-6 z-10 h-30"
 								src={pokemon.sprites.other.home.front_default}
 							/>
 						</div>
@@ -31,7 +32,8 @@ export default function PokemonCard(props) {
 							<h3 className="z-0 uppercase text-center ml-5">{pokemon.name}</h3>
 						</div>
 					</div>
-				))}
+                ))}
+                <Modal />
 			</div>
 		);
 	}
