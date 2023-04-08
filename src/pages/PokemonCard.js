@@ -19,7 +19,7 @@ export default function PokemonCard(props) {
                     src={pokemon.sprites.other.home.front_default}
                   />
                 </div>
-                <h3 className="z-0 text-center ml-5">#{pokemon.id}</h3>
+                <h3 className="z-0 text-center ml-5">#{pokemon.id < 10 ? `00${pokemon.id}` : pokemon.id <= 99 ? `0${pokemon.id}` : pokemon.id }</h3>
                 <h3 className="z-0 text-center ml-5">{pokemon.name}</h3>
               </div>
             ))}
