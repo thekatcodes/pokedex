@@ -8,10 +8,15 @@ export default function PokemonCard(props) {
 	if (pokemonData.length > 0) {
 		return pokemonData.map((pokemon) => {
 			return (
-				<div key={pokemon.id}>
-					<h3>#{pokemon.id}</h3>
-					<img src={pokemon.sprites.other.home.front_default} />
-					<h3>{pokemon.name}</h3>
+				<div
+					className="relative max-w-sm rounded overflow-visible shadow-lg h-20"
+					key={pokemon.id}
+				>
+					<div className="absolute top-0 left-0 w-1/2 h-full overflow-visible">
+						<img className="absolute top-0 left-0 z-10 h-28" src={pokemon.sprites.other.home.front_default} />
+					</div>
+					<h3 className="z-0">#{pokemon.id}</h3>
+					<h3 className="z-0">{pokemon.name}</h3>
 				</div>
 			);
 		});
