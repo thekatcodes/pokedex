@@ -1,7 +1,8 @@
 import React from "react";
 
 export default function Modal(props) {
-	const { showModal, onClose } = props;
+	const { pokemon, showModal, onClose } = props;
+    console.log(pokemon);
 
 	if (!showModal) return null;
 
@@ -14,7 +15,10 @@ export default function Modal(props) {
 				>
 					Close
 				</button>
-				<div className="bg-white p-2 rounded">MODAL</div>
+                <div className="bg-white p-2 rounded">
+                    <h3>{pokemon[0].name}</h3>
+                
+                </div>
 			</div>
 		</div>
 	);
