@@ -24,7 +24,7 @@ export default function PokemonCard(props) {
 							<div className="absolute -top-4 -left-6 w-1/2 h-full overflow-visible">
 								<img
 									className="absolute -top-0 -left-6 z-1 h-35"
-									src={pokemon.sprites.other.home.front_default}
+									src={pokemon.sprites.other['official-artwork'].front_default}
 								/>
 							</div>
 							<div className="pokemon-cards__name flex flex-col ml-5 pt-5 pb-5 z-0 text-center">
