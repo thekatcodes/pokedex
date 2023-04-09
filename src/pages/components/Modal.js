@@ -39,9 +39,14 @@ export default function Modal(props) {
 						alt={pokemon[0].name}
 					/>
 					<div>
-						{pokemon[0].types.map((type) => (
-							<p key={type.slot}>{type.type.name}</p>
-						))}
+                        {pokemon[0].types.map((type) => {
+                            console.log(type.type.name)
+                            const singleType = type.type.name;
+                            pokemonType(singleType);
+                            return (
+                                <p key={type.slot} className={colorClass}>{type.type.name}</p>
+                            )
+                        })}
 					</div>
 					<div>
 						<h4>About</h4>
