@@ -1,83 +1,17 @@
 import React from "react";
-import classNames from "classnames";
+import { pokemonType, colorClass } from "../../utils/helper";
 
 export default function Modal(props) {
-    const { pokemon, showModal, onClose } = props;
+	const { pokemon, showModal, onClose } = props;
 	console.log(pokemon);
-    
-    let colorClass;
-    function pokemonType(type) {
-    
-        switch (type) {
-            case "bug":
-                colorClass = "bg-bug";
-                break;
-            case "dark":
-                colorClass = "bg-dark";
-                break;
-            case "dragon":
-                colorClass = "bg-dragon";
-                break;
-            case "electric":
-                colorClass = "bg-electric";
-                break;
-            case "fairy":
-                colorClass = "bg-fairy";
-                break;
-            case "fighting":
-                colorClass = "bg-fighting";
-                break;
-            case "fire":
-                colorClass = "bg-fire";
-                break;
-            case "flying":
-                colorClass = "bg-flying";
-                break;
-            case "ghost":
-                colorClass = "bg-ghost";
-                break;
-            case "grass":
-                colorClass = "bg-grass";
-                break;
-            case "ground":
-                colorClass = "bg-ground";
-                break;
-            case "ice":
-                colorClass = "bg-ice";
-                break;
-            case "normal":
-                colorClass = "bg-normal";
-                break;
-            case "poison":
-                colorClass = "bg-poison";
-                break;
-            case "psychic":
-                colorClass = "bg-psychic";
-                break;
-            case "rock":
-                colorClass = "bg-rock";
-                break;
-            case "steel":
-                colorClass = "bg-steel";
-                break;
-            case "water":
-                colorClass = "bg-water";
-                break;
-            default:
-                colorClass = "";
-                break;
-        }
-    
-        // const typeClass = classNames("px-2 py-1 rounded-md text-white", colorClass);
-        // return typeClass;
-    }
-    
-    const type = pokemon[0].types[0].type.name;
-    pokemonType(type)
-    console.log(pokemon[0].types[0].type.name)
 
+	if (!showModal) {
+		return null;
+	}
 
-	if (!showModal) return null;
+	const type = pokemon[0].types[0].type.name;
+	pokemonType(type);
+	console.log(pokemon[0].types[0].type.name);
 
 	return (
 		<div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center">
@@ -101,7 +35,7 @@ export default function Modal(props) {
 						</p>
 					</div>
 					<img
-						src={pokemon[0].sprites.other.home.front_default}
+						src={pokemon[0].sprites.other['official-artwork'].front_default}
 						alt={pokemon[0].name}
 					/>
 					<div>
