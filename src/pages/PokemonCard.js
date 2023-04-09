@@ -4,9 +4,14 @@ import Modal from "./components/Modal";
 export default function PokemonCard(props) {
 	const { pokemonData } = props;
 	const [showModal, setShowModal] = useState(false);
+	const [currentPokemon, setCurrentPokemon] = useState("");
 
-	console.log("POKEMONCARD", pokemonData);
+    console.log("POKEMONCARD", pokemonData);
 
+    // Use filter method to create new array (focusPokemon) that contains only the pokemon with the name in currentPokemon state
+    const focusPokemon = pokemonData.filter(pokemon => pokemon.name === currentPokemon);
+
+    
 	if (pokemonData.length > 0) {
 		return (
 			<>
@@ -36,14 +41,22 @@ export default function PokemonCard(props) {
 								</h3>
 							</div>
 							<button
-								onClick={() => setShowModal(true)}
+								onClick={() => {
+									setShowModal(true);
+                                    setCurrentPokemon(pokemon.name);
+								}}
 							>
 								Show details
 							</button>
 						</div>
 					))}
 				</div>
-				<Modal showModal={showModal} onClose={() => setShowModal(false)}/>
+				<Modal
+					showModal={showModal}
+                    onClose={() => setShowModal(false)}
+                    pokemon={focusPokemon}
+
+				/>
 			</>
 		);
 	}
