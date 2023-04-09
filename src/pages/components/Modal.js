@@ -1,4 +1,5 @@
 import React from "react";
+import Image from "next/image";
 import { pokemonType, colorClass } from "../../utils/helper";
 
 export default function Modal(props) {
@@ -15,15 +16,15 @@ export default function Modal(props) {
 
 	return (
 		<div className="fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center">
-			<div className="w-[600px] flex flex-col">
+			<div className="w-[500px] flex flex-col">
 				<button
 					className="text-white text-xl place-self-end"
 					onClick={() => onClose()}
 				>
 					Close
 				</button>
-				<div className="bg-white p-2 rounded">
-					<div className={colorClass}>
+                <div className={`${colorClass} p-2 rounded-2xl`}>
+					<div className="flex justify-between">
 						<h3>{pokemon[0].name}</h3>
 						<p>
 							#
@@ -35,27 +36,45 @@ export default function Modal(props) {
 						</p>
 					</div>
 					<img
-						src={pokemon[0].sprites.other['official-artwork'].front_default}
-						alt={pokemon[0].name}
+						src={pokemon[0].sprites.other["official-artwork"].front_default}
+                        alt={pokemon[0].name}
+                        className=""
 					/>
-					<div>
-                        {pokemon[0].types.map((type) => {
-                            console.log(type.type.name)
-                            const singleType = type.type.name;
-                            pokemonType(singleType);
-                            return (
-                                <p key={type.slot} className={colorClass}>{type.type.name}</p>
-                            )
-                        })}
-					</div>
-					<div>
+					<div className="bg-grey-100 p-3 m-2 rounded-2xl">
+						<div>
+							{pokemon[0].types.map((type) => {
+								console.log(type.type.name);
+								const singleType = type.type.name;
+								pokemonType(singleType);
+								return (
+									<p
+										key={type.slot}
+										className={colorClass}
+									>
+										{type.type.name}
+									</p>
+								);
+							})}
+						</div>
 						<h4>About</h4>
 						<div>
 							<span>
+								<Image
+									src="/weight-icon.png"
+									alt="Weight icon"
+									width={20}
+									height={20}
+								/>
 								<p>{pokemon[0].weight / 10} kg</p>
 								<p>Weight</p>
 							</span>
-							<span>
+                            <span>
+                            <Image
+									src="/ruler.png"
+									alt="Ruler icon"
+									width={20}
+									height={20}
+								/>
 								<p>{pokemon[0].height / 10} m</p>
 								<p>Height</p>
 							</span>
