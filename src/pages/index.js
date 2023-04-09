@@ -20,7 +20,7 @@ function HomePage() {
 						},
 					}
 				);
-				console.log([result.data]);
+				// console.log([result.data]);
 				setPokemonData([result.data]);
 			} catch (error) {
 				console.log(error);
