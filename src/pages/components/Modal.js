@@ -23,7 +23,7 @@ export default function Modal(props) {
 				>
 					Close
 				</button>
-                <div className={`${colorClass} p-2 rounded-2xl`}>
+				<div className={`${colorClass} p-2 rounded-2xl`}>
 					<div className="flex justify-between">
 						<h3>{pokemon[0].name}</h3>
 						<p>
@@ -37,11 +37,11 @@ export default function Modal(props) {
 					</div>
 					<img
 						src={pokemon[0].sprites.other["official-artwork"].front_default}
-                        alt={pokemon[0].name}
-                        className=""
+						alt={pokemon[0].name}
+						className=""
 					/>
-					<div className="bg-grey-100 p-3 m-2 rounded-2xl">
-						<div>
+					<div className="bg-grey-100 p-3 m-2 rounded-2xl ">
+						<div className="flex justify-center mt-20 mb-3">
 							{pokemon[0].types.map((type) => {
 								console.log(type.type.name);
 								const singleType = type.type.name;
@@ -49,45 +49,51 @@ export default function Modal(props) {
 								return (
 									<p
 										key={type.slot}
-										className={colorClass}
+										className={`inline-block p-1 pl-2 pr-2 rounded-2xl ${colorClass}`}
 									>
 										{type.type.name}
 									</p>
 								);
 							})}
 						</div>
-						<h4>About</h4>
-						<div>
-							<span>
-								<Image
-									src="/weight-icon.png"
-									alt="Weight icon"
-									width={20}
-									height={20}
-								/>
-								<p>{pokemon[0].weight / 10} kg</p>
+						<h4 className="flex justify-center">About</h4>
+						<div className="flex justify-between m-10 content-end">
+							<div>
+								<span className="flex flow-row mb-3">
+									<Image
+										src="/weight-icon.png"
+										alt="Weight icon"
+										width={20}
+										height={20}
+									/>
+									<p>{pokemon[0].weight / 10} kg</p>
+								</span>
 								<p>Weight</p>
-							</span>
-                            <span>
-                            <Image
-									src="/ruler.png"
-									alt="Ruler icon"
-									width={20}
-									height={20}
-								/>
-								<p>{pokemon[0].height / 10} m</p>
-								<p>Height</p>
-							</span>
-							<span>
-								<p>
-									{pokemon[0].abilities.map((ability) => (
-										<p key={ability.slot}>{ability.ability.name}</p>
-									))}
-								</p>
-								<p>Abilities</p>
-							</span>
+							</div>
+							<div className="text-center">
+								<span className="flex flow-row mb-3">
+									<Image
+										src="/ruler.png"
+										alt="Ruler icon"
+										width={20}
+										height={20}
+									/>
+									<p>{pokemon[0].height / 10} m</p>
+								</span>
+									<p>Height</p>
+							</div>
+							<div>
+								<span className="mb-3">
+									<p>
+										{pokemon[0].abilities.map((ability) => (
+											<p key={ability.slot}>{ability.ability.name}</p>
+										))}
+									</p>
+								</span>
+									<p>Abilities</p>
+							</div>
 						</div>
-						<h4>Base Stats</h4>
+						<h4 className="flex justify-center">Base Stats</h4>
 						<div>
 							<p>HP {pokemon[0].stats[0].base_stat}</p>
 							<p>ATK {pokemon[0].stats[1].base_stat}</p>
