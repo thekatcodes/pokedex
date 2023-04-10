@@ -161,14 +161,14 @@ export default function Modal(props) {
                                 
 
 							return (
-								<div className="flex justify-center">
-									<p>{stat.stat.name}</p>
+								<div className="flex justify-center align-center">
+                                    <p className="flex items-end mr-3">{stat.stat.name}</p>
 									<div
 										ref={containerRef}
 										className={` flex-grow mt-2 ${colorClass} rounded-full bg-opacity-25`}
 									>
 										<div
-											className={`mt-2 ${colorClass} py-0 rounded-full opacity-100`}
+											className={`${colorClass} py-0 rounded-full opacity-100`}
 										    style={{ width: `${Math.floor(containerWidth * stat.base_stat / 255)}px`}}
                                         >
 											<div className=" text-white text-sm inline-block bg-purple-700 px-2 rounded-full">
