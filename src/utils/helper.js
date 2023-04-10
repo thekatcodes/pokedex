@@ -65,3 +65,35 @@ export function pokemonType(type) {
 	// const typeClass = classNames("px-2 py-1 rounded-md text-white", colorClass);
 	// return typeClass;
 }
+
+
+
+//Variable and function that sets a new stat label based on the api stat name
+export let newStatLabel;
+
+export function statName(name) {
+    switch (name) {
+        case "hp":
+            newStatLabel = "HP";
+            break;
+        case "attack":
+            newStatLabel = "ATK";
+            break;
+        case "defense":
+            newStatLabel = "DEF";
+            break;
+        case "special-attack":
+            newStatLabel = "SATK";
+            break;
+        case "special-defense":
+            newStatLabel = "SDEF";
+            break;
+        case "speed":
+            newStatLabel = "SPD";
+            break;
+       
+        default:
+            newStatLabel = "";
+            break;
+    }
+}
