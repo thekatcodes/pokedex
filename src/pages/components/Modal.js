@@ -1,6 +1,6 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { pokemonType, colorClass } from "../../utils/helper";
+import { pokemonType, colorClass, statName, newStatLabel } from "../../utils/helper";
 
 export default function Modal(props) {
 	const { pokemon, showModal, onClose } = props;
@@ -151,18 +151,15 @@ export default function Modal(props) {
 							<p>SDEF {pokemon[0].stats[4].base_stat}</p>
 							<p>SPD {pokemon[0].stats[5].base_stat}</p> */}
 
-						{pokemon[0].stats.map((stat) => {
-							console.log(
-								"BOOmath",
-								Math.floor((containerWidth * stat.base_stat) / 255)
-							);
-                            console.log("boo", containerWidth);
-                            
-                                
+                        {pokemon[0].stats.map((stat) => {
+                            // Calls statName function to set a new stat label for each stat display
+                            const name = stat.stat.name;
+                            statName(name)
+                        
 
 							return (
 								<div className="flex justify-center align-center">
-                                    <p className="flex items-end mr-3">{stat.stat.name}</p>
+                                    <p className="flex items-end mr-3">{newStatLabel}</p>
 									<div
 										ref={containerRef}
 										className={` flex-grow mt-2 ${colorClass} rounded-full bg-opacity-25`}
