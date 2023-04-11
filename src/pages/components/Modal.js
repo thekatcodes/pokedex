@@ -116,42 +116,6 @@ export default function Modal(props) {
 						<h4 className="flex justify-center">Base Stats</h4>
 						{/* Calls pokemonType function again to set the default color to the first type (if pokemon has more than 1 type) */}
 						{pokemonType(type)}
-						{/* <div>
-							<p>HP</p>
-							<div
-								ref={containerRef}
-								className={`mt-2 ${colorClass} rounded-full bg-opacity-25`}
-							>
-								<div
-									className={`w-[${Math.floor(
-										(containerWidth * pokemon[0].stats[0].base_stat) / 255
-									)}px] mt-2 ${colorClass} py-0 rounded-full opacity-100`}
-								>
-									<div className=" text-white text-sm inline-block bg-purple-700 px-2 rounded-full">
-										{pokemon[0].stats[0].base_stat}
-									</div>
-								</div>
-							</div>
-							<p>ATK {pokemon[0].stats[1].base_stat}</p>
-							<div
-								ref={containerRef}
-								className={`mt-2 ${colorClass} rounded-full bg-opacity-25`}
-							>
-								<div
-									className={`w-[${Math.floor(
-										(containerWidth * pokemon[0].stats[1].base_stat) / 255
-									)}px] mt-2 ${colorClass} py-0 rounded-full opacity-100`}
-								>
-									<div className=" text-white text-sm inline-block bg-purple-700 px-2 rounded-full">
-										{pokemon[0].stats[1].base_stat}
-									</div>
-								</div>
-							</div>
-							<p>DEF {pokemon[0].stats[2].base_stat}</p>
-							<p>SATK {pokemon[0].stats[3].base_stat}</p>
-							<p>SDEF {pokemon[0].stats[4].base_stat}</p>
-							<p>SPD {pokemon[0].stats[5].base_stat}</p> */}
-
                         {pokemon[0].stats.map((stat) => {
                             // Calls statName function to set a new stat label for each stat display
                             const name = stat.stat.name;
