@@ -14,7 +14,8 @@
     margin: 0 100px 0;
 }
 
-    h3 {
+    h3, h4 {
         font-family: var(--header-font);
+        font-size: larger;
         font-weight: 700;
     }
