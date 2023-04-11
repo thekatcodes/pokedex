@@ -57,7 +57,8 @@ export default function Modal(props) {
 					<img
 						src={pokemon[0].sprites.other["official-artwork"].front_default}
 						alt={pokemon[0].name}
-						width={100}
+                        width={250}
+                        className='relative m-auto top-16'
 					/>
 					<div className="bg-grey-100 p-3 m-2 rounded-2xl ">
 						<div className="flex justify-center mt-20 mb-3">
