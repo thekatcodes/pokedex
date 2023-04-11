@@ -75,8 +75,10 @@ export default function Modal(props) {
 									</p>
 								);
 							})}
-						</div>
-						<h4 className={`flex justify-center `}>About</h4>
+                        </div>
+                        {/* Calls pokemonType function again to set the default color to the first type (if pokemon has more than 1 type) */}
+						{pokemonType(type)}
+						<h4 className={`flex justify-center text-${colorClass}`}>About</h4>
 						<div className="flex justify-between ml-10 mr-10 mt-5 mb-5 content-end">
 							<div className='text-center flex flex-col justify-end'>
 								<span className="flex flow-row mb-3">
@@ -113,7 +115,7 @@ export default function Modal(props) {
 								<p className="mt-2">Abilities</p>
 							</div>
 						</div>
-						<h4 className="flex justify-center">Base Stats</h4>
+						<h4 className={`flex justify-center text-${colorClass}`}>Base Stats</h4>
 						{/* Calls pokemonType function again to set the default color to the first type (if pokemon has more than 1 type) */}
 						{pokemonType(type)}
                         {pokemon[0].stats.map((stat) => {
@@ -122,7 +124,7 @@ export default function Modal(props) {
                             statName(name)
 
 							return (
-								<div className="flex justify-center align-center m-3">
+								<div className="flex justify-center align-center m-3">  
                                     <p className="flex items-end mr-3 w-10">{newStatLabel}</p>
 									<div
 										ref={containerRef}
