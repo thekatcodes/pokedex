@@ -4,58 +4,58 @@ export let colorClass;
 export function pokemonType(type) {
 	switch (type) {
 		case "bug":
-			colorClass = "bg-bug";
+			colorClass = "bug";
 			break;
 		case "dark":
-			colorClass = "bg-dark";
+			colorClass = "dark";
 			break;
 		case "dragon":
-			colorClass = "bg-dragon";
+			colorClass = "dragon";
 			break;
 		case "electric":
-			colorClass = "bg-electric";
+			colorClass = "electric";
 			break;
 		case "fairy":
-			colorClass = "bg-fairy";
+			colorClass = "fairy";
 			break;
 		case "fighting":
-			colorClass = "bg-fighting";
+			colorClass = "fighting";
 			break;
 		case "fire":
-			colorClass = "bg-fire";
+			colorClass = "fire";
 			break;
 		case "flying":
-			colorClass = "bg-flying";
+			colorClass = "flying";
 			break;
 		case "ghost":
-			colorClass = "bg-ghost";
+			colorClass = "ghost";
 			break;
 		case "grass":
-			colorClass = "bg-grass";
+			colorClass = "grass";
 			break;
 		case "ground":
-			colorClass = "bg-ground";
+			colorClass = "ground";
 			break;
 		case "ice":
-			colorClass = "bg-ice";
+			colorClass = "ice";
 			break;
 		case "normal":
-			colorClass = "bg-normal";
+			colorClass = "normal";
 			break;
 		case "poison":
-			colorClass = "bg-poison";
+			colorClass = "poison";
 			break;
 		case "psychic":
-			colorClass = "bg-psychic";
+			colorClass = "psychic";
 			break;
 		case "rock":
-			colorClass = "bg-rock";
+			colorClass = "rock";
 			break;
 		case "steel":
-			colorClass = "bg-steel";
+			colorClass = "steel";
 			break;
 		case "water":
-			colorClass = "bg-water";
+			colorClass = "water";
 			break;
 		default:
 			colorClass = "";
