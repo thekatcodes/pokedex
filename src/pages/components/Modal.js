@@ -44,7 +44,7 @@ export default function Modal(props) {
 				</button>
 				<div className={`${colorClass} p-2 rounded-2xl`}>
 					<div className="flex justify-between">
-						<h3>{pokemon[0].name}</h3>
+						<h3 className="capitalize">{pokemon[0].name}</h3>
 						<p>
 							#
 							{pokemon[0].id < 10
@@ -124,7 +124,7 @@ export default function Modal(props) {
 
 							return (
 								<div className="flex justify-center align-center">
-                                    <p className="flex items-end mr-3">{newStatLabel}</p>
+                                    <p className="flex items-end mr-3 w-10">{newStatLabel}</p>
 									<div
 										ref={containerRef}
 										className={` flex-grow mt-2 ${colorClass} rounded-full bg-opacity-25`}
@@ -145,6 +145,5 @@ export default function Modal(props) {
 				</div>
 			</div>
 		</div>
-		// </div>
 	);
 }
