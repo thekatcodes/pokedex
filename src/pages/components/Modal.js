@@ -42,8 +42,8 @@ export default function Modal(props) {
 				>
 					Close
 				</button>
-				<div className={`${colorClass} p-2 rounded-2xl`}>
-					<div className="flex justify-between">
+				<div className={`bg-${colorClass} p-2 rounded-2xl`}>
+					<div className="flex justify-between m-3">
 						<h3 className="capitalize">{pokemon[0].name}</h3>
 						<p>
 							#
@@ -69,16 +69,16 @@ export default function Modal(props) {
 								return (
 									<p
 										key={type.slot}
-										className={`inline-block p-1 pl-2 pr-2 rounded-2xl ${colorClass}`}
+										className={`inline-block p-1 pl-3 pr-3 rounded-2xl ml-2 mr-2 capitalize text-white bg-${colorClass}`}
 									>
 										{type.type.name}
 									</p>
 								);
 							})}
 						</div>
-						<h4 className="flex justify-center">About</h4>
-						<div className="flex justify-between m-10 content-end">
-							<div>
+						<h4 className={`flex justify-center `}>About</h4>
+						<div className="flex justify-between ml-10 mr-10 mt-5 mb-5 content-end">
+							<div className='text-center flex flex-col justify-end'>
 								<span className="flex flow-row mb-3">
 									<Image
 										src="/weight-icon.png"
@@ -88,9 +88,9 @@ export default function Modal(props) {
 									/>
 									<p>{pokemon[0].weight / 10} kg</p>
 								</span>
-								<p>Weight</p>
+								<p className="mt-2">Weight</p>
 							</div>
-							<div className="text-center">
+							<div className="text-center flex flex-col justify-end">
 								<span className="flex flow-row mb-3">
 									<Image
 										src="/ruler.png"
@@ -100,9 +100,9 @@ export default function Modal(props) {
 									/>
 									<p>{pokemon[0].height / 10} m</p>
 								</span>
-								<p>Height</p>
+								<p className="mt-2">Height</p>
 							</div>
-							<div>
+							<div className="text-center flex flex-col justify-end">
 								<span className="mb-3">
 									<p className="capitalize">
 										{pokemon[0].abilities.map((ability) => (
@@ -110,7 +110,7 @@ export default function Modal(props) {
 										))}
 									</p>
 								</span>
-								<p>Abilities</p>
+								<p className="mt-2">Abilities</p>
 							</div>
 						</div>
 						<h4 className="flex justify-center">Base Stats</h4>
@@ -120,17 +120,16 @@ export default function Modal(props) {
                             // Calls statName function to set a new stat label for each stat display
                             const name = stat.stat.name;
                             statName(name)
-                        
 
 							return (
-								<div className="flex justify-center align-center">
+								<div className="flex justify-center align-center m-3">
                                     <p className="flex items-end mr-3 w-10">{newStatLabel}</p>
 									<div
 										ref={containerRef}
-										className={` flex-grow mt-2 ${colorClass} rounded-full bg-opacity-25`}
+										className={` flex-grow mt-2 bg-${colorClass} rounded-full bg-opacity-25`}
 									>
 										<div
-											className={`${colorClass} py-0 rounded-full opacity-100`}
+											className={`bg-${colorClass} py-0 rounded-full opacity-100`}
 										    style={{ width: `${Math.floor(containerWidth * stat.base_stat / 255)}px`}}
                                         >
 											<div className=" text-white text-sm inline-block bg-purple-700 px-2 rounded-full">
