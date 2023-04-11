@@ -7,7 +7,11 @@ module.exports = {
 
 		// Or if using `src` directory:
 		"./src/**/*.{js,ts,jsx,tsx}",
-	],
+    ],
+    safelist: [
+        { pattern: /bg-./ },
+        { pattern: /text-./ }
+    ],
 	theme: {
         extend: {},
         colors: {
