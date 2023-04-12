@@ -2,8 +2,9 @@ import React from "react";
 
 export default function Footer() {
     return (
-
-        <h1>this is the Footer</h1>
+<footer className="flex justify-center align-end">     
+    <h1>Project developed by Katie Liu, and open-sourced</h1>
+</footer>
     )
     
 }
