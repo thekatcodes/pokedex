@@ -43,7 +43,7 @@ export default function Modal(props) {
 					Close
 				</button>
 				<div className={`bg-${colorClass} p-2 rounded-2xl`}>
-					<div className="flex justify-between m-3">
+					<div className="flex justify-between m-3 text-white">
 						<h3 className="capitalize">{pokemon[0].name}</h3>
 						<p>
 							#
