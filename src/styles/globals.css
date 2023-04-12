@@ -14,8 +14,16 @@
     margin: 0 100px 0;
 }
 
-    h3, h4 {
+    h3, h4, .modal__id {
         font-family: var(--header-font);
         font-size: larger;
         font-weight: 700;
     }
+
+    h1, .modal__name {
+        font-family: var(--header-font);
+        font-size: xx-large;
+        font-weight: 700;
+    }
+    
+    
