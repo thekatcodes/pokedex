@@ -21,9 +21,9 @@ export default function PokemonCard(props) {
 							className="relative max-w-sm border-solid border-2 border-grey-100 rounded-2xl overflow-visible shadow-lg h-28 mt-6 mb-6 flex items-center justify-around"
 							key={pokemon.id}
 						>
-							<div className="absolute -top-4 -left-6 w-1/2 h-full overflow-visible">
+							<div className="absolute -top-0 -left-6 w-1/2 h-full overflow-visible">
 								<img
-									className="absolute -top-0 -left-6 z-1 h-35"
+									className="absolute -top-2 -left-6 z-1 w-[130px]"
 									src={pokemon.sprites.other['official-artwork'].front_default}
 								/>
 							</div>
