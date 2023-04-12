@@ -43,8 +43,8 @@ export default function Modal(props) {
 					Close
 				</button>
 				<div className={`modal__header bg-${colorClass} p-2 rounded-2xl`}>
-					<div className="flex justify-between m-3 text-white">
-						<h3 className="modal__title capitalize">{pokemon[0].name}</h3>
+					<div className="flex justify-between align-center m-3 text-white">
+						<h3 className="modal__name capitalize">{pokemon[0].name}</h3>
 						<p className="modal__id">
 							#
 							{pokemon[0].id < 10

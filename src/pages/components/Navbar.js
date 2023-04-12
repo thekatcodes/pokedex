@@ -17,16 +17,17 @@ export default function Navbar(props) {
 	}, [searchValue]);
 
 	return (
-		<div className="navbar text-center flex mt-4 mb-12">
-			<Image
-				src="/logo.png"
-				alt="Pokemon Logo"
-				width={100}
-                height={100}
+        <div className="navbar text-center flex pt-4 pb-4 mb-12 bg-red">
+            <Image
+            src="/pokeball.png"
+            alt="Pokeball Logo"
+            width={50}
+            height={50}
                 className='navbar__logo ml-4'
-			/>
+            />
+			<h1 className="text-white ml-4">Pokedex</h1>
 			<input
-				className="navbar__search border-solid border-2 border-sky-500 px-4 py-3 mx-auto rounded-full"
+				className="navbar__search px-4 py-3 mx-auto rounded-full"
 				type="search"
 				value={searchValue}
 				placeholder="Search Pokémon"
