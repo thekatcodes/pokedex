@@ -35,16 +35,16 @@ export default function Modal(props) {
 	);
 	return (
 		<div className="modal modal--open fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center">
-			<div className=" modal__container w-[500px] flex flex-col">
+			<div className=" modal__container w-[350px] lg:w-[500px] flex flex-col">
 				<button
 					className="modal__close text-white text-xl place-self-end"
 					onClick={() => onClose()}
 				>
 					Close
 				</button>
-				<div className={`modal__header bg-${colorClass} p-2 rounded-2xl`}>
+				<div className={`modal__header bg-${colorClass} h-[530px] p-2 rounded-2xl`}>
 					<div className="flex justify-between align-center m-3 text-white">
-						<h3 className="modal__name capitalize">{pokemon[0].name}</h3>
+						<h3 className="modal__name capitalize text-lg">{pokemon[0].name}</h3>
 						<p className="modal__id">
 							#
 							{pokemon[0].id < 10
@@ -57,11 +57,10 @@ export default function Modal(props) {
 					<img
 						src={pokemon[0].sprites.other["official-artwork"].front_default}
 						alt={pokemon[0].name}
-                        width={250}
-                        className='modal__image relative m-auto top-16'
+                        className='modal__image absolute top-28 left-0 right-0 lg:relative m-auto lg:top-16 w-[150px] lg:w-[250px]'
 					/>
-					<div className="modal details-container bg-grey-100 p-3 m-2 rounded-2xl ">
-						<div className="details-container__type flex justify-center mt-20 mb-3">
+					<div className="modal details-container bg-white p-3 m-2 rounded-2xl overflow-auto h-[390px] mt-20">
+						<div className="details-container__type flex justify-center mt-10 lg:mt-20 mb-3">
 							{pokemon[0].types.map((type) => {
 								console.log(type.type.name);
 								const singleType = type.type.name;
@@ -79,7 +78,7 @@ export default function Modal(props) {
                         {/* Calls pokemonType function again to set the default color to the first type (if pokemon has more than 1 type) */}
 						{pokemonType(type)}
 						<h4 className={`details-container__title flex justify-center text-${colorClass}`}>About</h4>
-						<div className="details-container__info flex justify-between ml-10 mr-10 mt-5 mb-5 content-end">
+						<div className="details-container__info flex justify-between lg:ml-10 lg:mr-10 lg:mt-5 mb-5 content-end">
 							<div className='text-center flex flex-col justify-end'>
 								<span className="flex flow-row mb-3">
 									<Image
@@ -124,7 +123,7 @@ export default function Modal(props) {
                             statName(name)
 
 							return (
-								<div className="details-container__stat flex justify-center align-center m-3">  
+								<div className="details-container__stat flex justify-center align-center lg:m-3">  
                                     <p className="flex items-end mr-3 w-10">{newStatLabel}</p>
 									<div
 										ref={containerRef}
