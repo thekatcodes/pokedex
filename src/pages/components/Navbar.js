@@ -23,9 +23,9 @@ export default function Navbar(props) {
             alt="Pokeball Logo"
             width={50}
             height={50}
-                className='navbar__logo ml-4'
+                className='navbar__logo ml-4 absolute'
             />
-			<h1 className="text-white ml-4">Pokedex</h1>
+			<h1 className="navbar__logo-name absolute text-white ml-4 left-16">Pokedex</h1>
 			<input
 				className="navbar__search px-4 py-3 mx-auto rounded-full"
 				type="search"
