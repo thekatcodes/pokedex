@@ -10,20 +10,25 @@
 }
 
 
-.pokemon-cards {
+/* .pokemon-cards {
     margin: 0 100px 0;
 }
 
-    h3, h4, .modal__id {
+    h3, h4 {
         font-family: var(--header-font);
         font-size: larger;
         font-weight: 700;
     }
 
-    h1, .modal__name {
+    h1 {
         font-family: var(--header-font);
         font-size: xx-large;
         font-weight: 700;
     }
-    
-    
+     */
+
+     @media only screen and (max-width: 768px) {
+        .navbar__logo-name {
+            display: none;
+        }
+     }
