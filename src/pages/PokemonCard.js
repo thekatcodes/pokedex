@@ -15,15 +15,15 @@ export default function PokemonCard(props) {
 	if (pokemonData.length > 0) {
 		return (
 			<>
-				<div className="pokemon-cards grid sm:grid-cols-2 lg:grid-cols-4 gap-20">
+				<div className="pokemon-cards grid grid-cols-1 mx-[50px] sm:grid-cols-2 md:grid-cols-4 gap-20">
 					{pokemonData.map((pokemon) => (
 						<div
-							className="relative max-w-sm border-solid border-2 border-grey-100 rounded-2xl overflow-visible shadow-lg h-28 mt-6 mb-6 flex items-center justify-around"
+							className="relative width[100px] md:max-w-sm border-solid border-2 border-grey-100 rounded-2xl overflow-visible shadow-lg h-28 md:my-6 flex items-center justify-around"
 							key={pokemon.id}
 						>
-							<div className="absolute -top-0 -left-6 w-1/2 h-full overflow-visible">
+							<div className="absolute top-3 -left-8 md:-left-6 w-1/2 h-full overflow-visible">
 								<img
-									className="absolute sm:top-4 lg:-top-4 -left-6 z-1 w-[130px]"
+									className="absolute md:-top-4 left-0 md:-left-6 z-1 w-[100px] md:w-[130px]"
 									src={pokemon.sprites.other['official-artwork'].front_default}
 								/>
 							</div>
