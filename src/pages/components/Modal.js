@@ -78,7 +78,7 @@ export default function Modal(props) {
                         {/* Calls pokemonType function again to set the default color to the first type (if pokemon has more than 1 type) */}
 						{pokemonType(type)}
 						<h4 className={`details-container__title flex justify-center text-${colorClass} font-bold mb-1`}>About</h4>
-						<div className="details-container__info flex justify-between lg:ml-10 lg:mr-10 lg:mt-5 mb-5 content-end">
+						<div className="details-container__info flex justify-between lg:mx-10 lg:mt-5 mb-5 content-end">
 							<div className='text-center flex flex-col justify-end'>
 								<span className="flex flow-row mb-3">
 									<Image
