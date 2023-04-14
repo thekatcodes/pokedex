@@ -12,23 +12,25 @@
 
 /* .pokemon-cards {
     margin: 0 100px 0;
+} */
+
+h1, .navbar__logo-name{
+    font-family: var(--header-font);
+    font-size: xx-large;
+    font-weight: 700;
 }
 
-    h3, h4 {
-        font-family: var(--header-font);
-        font-size: larger;
-        font-weight: 700;
-    }
+h3,
+h4 {
+    font-family: var(--header-font);
+    /* font-size: larger; */
+    font-weight: 700;
+}
 
-    h1 {
-        font-family: var(--header-font);
-        font-size: xx-large;
-        font-weight: 700;
-    }
-     */
 
-     @media only screen and (max-width: 768px) {
-        .navbar__logo-name {
-            display: none;
-        }
-     }
+
+@media only screen and (max-width: 768px) {
+    .navbar__logo-name {
+        display: none;
+    }
+}
