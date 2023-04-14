@@ -1,6 +1,11 @@
 import React, { useRef, useState, useEffect } from "react";
 import Image from "next/image";
-import { pokemonType, colorClass, statName, newStatLabel } from "../../utils/helper";
+import {
+	pokemonType,
+	colorClass,
+	statName,
+	newStatLabel,
+} from "../../utils/helper";
 
 export default function Modal(props) {
 	const { pokemon, showModal, onClose } = props;
@@ -35,16 +40,23 @@ export default function Modal(props) {
 	);
 	return (
 		<div className="modal modal--open fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center">
-			<div className=" modal__container w-[350px] lg:w-[500px] flex flex-col">
-				<button
-					className="modal__close text-white text-xl place-self-end"
-					onClick={() => onClose()}
+			<div className=" modal__container w-[350px] sm:w-[500px] flex flex-col">
+				<div
+					className={`modal__header bg-${colorClass} h-[540px] sm:h-[650px] p-2 rounded-2xl`}
 				>
-					Close
-				</button>
-				<div className={`modal__header bg-${colorClass} h-[540px] sm:h-[650px] p-2 rounded-2xl`}>
 					<div className="flex justify-between align-center m-3 text-white">
-						<h3 className="modal__name capitalize text-lg font-bold">{pokemon[0].name}</h3>
+						<div className="flex">
+							<Image
+								src="/arrow.png"
+								alt="Arrow icon"
+								width={25}
+								height={20}
+								onClick={() => onClose()}
+							/>
+							<h3 className="modal__name capitalize text-lg font-bold ml-3">
+								{pokemon[0].name}
+							</h3>
+						</div>
 						<p className="modal__id">
 							#
 							{pokemon[0].id < 10
@@ -57,10 +69,10 @@ export default function Modal(props) {
 					<img
 						src={pokemon[0].sprites.other["official-artwork"].front_default}
 						alt={pokemon[0].name}
-                        className='modal__image absolute top-28 left-0 right-0 m-auto sm:top-[10em] w-[150px] lg:w-[190px]'
+						className="modal__image absolute top-[12em] left-0 right-0 m-auto sm:top-[8em] w-[150px] sm:w-[190px]"
 					/>
 					<div className="modal details-container bg-white p-3 m-2 rounded-2xl h-[400px]  sm:h-[510px] mt-20">
-						<div className="details-container__type flex justify-center mt-10 lg:mt-20 mb-3">
+						<div className="details-container__type flex justify-center mt-10 sm:mt-20 mb-3">
 							{pokemon[0].types.map((type) => {
 								console.log(type.type.name);
 								const singleType = type.type.name;
@@ -74,12 +86,16 @@ export default function Modal(props) {
 									</p>
 								);
 							})}
-                        </div>
-                        {/* Calls pokemonType function again to set the default color to the first type (if pokemon has more than 1 type) */}
+						</div>
+						{/* Calls pokemonType function again to set the default color to the first type (if pokemon has more than 1 type) */}
 						{pokemonType(type)}
-						<h4 className={`details-container__title flex justify-center text-${colorClass} font-bold mb-1`}>About</h4>
-						<div className="details-container__info flex justify-between lg:mx-10 lg:mt-5 mb-5 content-end">
-							<div className='text-center flex flex-col justify-end'>
+						<h4
+							className={`details-container__title flex justify-center text-${colorClass} font-bold mb-1`}
+						>
+							About
+						</h4>
+						<div className="details-container__info flex justify-between sm:mx-10 sm:mt-5 mb-5 content-end">
+							<div className="text-center flex flex-col justify-end">
 								<span className="flex flow-row mb-3">
 									<Image
 										src="/weight-icon.png"
@@ -89,7 +105,7 @@ export default function Modal(props) {
 									/>
 									<p className="text-sm">{pokemon[0].weight / 10} kg</p>
 								</span>
-								<p className="mt-2 text-grey-200 text-xs md:text-sm">Weight</p>
+								<p className="mt-2 text-grey-200 text-xs sm:text-sm">Weight</p>
 							</div>
 							<div className="text-center flex flex-col justify-end">
 								<span className="flex flow-row mb-3">
@@ -101,7 +117,7 @@ export default function Modal(props) {
 									/>
 									<p className="text-sm">{pokemon[0].height / 10} m</p>
 								</span>
-								<p className="mt-2 text-grey-200 text-xs md:text-sm">Height</p>
+								<p className="mt-2 text-grey-200 text-xs sm:text-sm">Height</p>
 							</div>
 							<div className="text-center flex flex-col justify-end">
 								<span>
@@ -111,28 +127,40 @@ export default function Modal(props) {
 										))}
 									</p>
 								</span>
-								<p className="mt-2 text-grey-200 text-xs md:text-sm">Abilities</p>
+								<p className="mt-2 text-grey-200 text-xs sm:text-sm">
+									Abilities
+								</p>
 							</div>
 						</div>
-						<h4 className={`details-container__title flex justify-center text-${colorClass} font-bold mb-1 sm:mb-4`}>Base Stats</h4>
+						<h4
+							className={`details-container__title flex justify-center text-${colorClass} font-bold mb-1 sm:mb-4`}
+						>
+							Base Stats
+						</h4>
 						{/* Calls pokemonType function again to set the default color to the first type (if pokemon has more than 1 type) */}
 						{pokemonType(type)}
-                        {pokemon[0].stats.map((stat) => {
-                            // Calls statName function to set a new stat label for each stat display
-                            const name = stat.stat.name;
-                            statName(name)
+						{pokemon[0].stats.map((stat) => {
+							// Calls statName function to set a new stat label for each stat display
+							const name = stat.stat.name;
+							statName(name);
 
 							return (
-								<div className="details-container__stat flex justify-center align-center sm:mx-3">  
-                                    <p className="flex items-end mr-3 w-10 text-sm">{newStatLabel}</p>
+								<div className="details-container__stat flex justify-center align-center sm:mx-3">
+									<p className="flex items-end mr-3 w-10 text-sm">
+										{newStatLabel}
+									</p>
 									<div
 										ref={containerRef}
 										className={`details-container__stat-bar flex-grow mt-1.5 md:mt-2 bg-${colorClass} rounded-full bg-opacity-25`}
 									>
 										<div
 											className={`bg-${colorClass} py-0 rounded-full opacity-100 text-sm`}
-										    style={{ width: `${Math.floor(containerWidth * stat.base_stat / 255)}px`}}
-                                        >
+											style={{
+												width: `${Math.floor(
+													(containerWidth * stat.base_stat) / 255
+												)}px`,
+											}}
+										>
 											<div className="details-container__stat-name text-white text-sm inline-block px-2 rounded-full">
 												{stat.base_stat}
 											</div>
