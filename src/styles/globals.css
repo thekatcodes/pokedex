@@ -27,6 +27,10 @@ h4 {
     font-weight: 700;
 }
 
+.modal__name {
+        font-size: x-large;
+}
+
 
 
 @media only screen and (max-width: 768px) {
