@@ -42,7 +42,7 @@ export default function Modal(props) {
 				>
 					Close
 				</button>
-				<div className={`modal__header bg-${colorClass} h-[540px] p-2 rounded-2xl`}>
+				<div className={`modal__header bg-${colorClass} h-[540px] sm:h-[650px] p-2 rounded-2xl`}>
 					<div className="flex justify-between align-center m-3 text-white">
 						<h3 className="modal__name capitalize text-lg font-bold">{pokemon[0].name}</h3>
 						<p className="modal__id">
@@ -57,9 +57,9 @@ export default function Modal(props) {
 					<img
 						src={pokemon[0].sprites.other["official-artwork"].front_default}
 						alt={pokemon[0].name}
-                        className='modal__image absolute top-28 left-0 right-0 lg:relative m-auto lg:top-16 w-[150px] lg:w-[250px]'
+                        className='modal__image absolute top-28 left-0 right-0 m-auto sm:top-[10em] w-[150px] lg:w-[190px]'
 					/>
-					<div className="modal details-container bg-white p-3 m-2 rounded-2xl h-[400px] mt-20">
+					<div className="modal details-container bg-white p-3 m-2 rounded-2xl h-[400px]  sm:h-[510px] mt-20">
 						<div className="details-container__type flex justify-center mt-10 lg:mt-20 mb-3">
 							{pokemon[0].types.map((type) => {
 								console.log(type.type.name);
@@ -114,7 +114,7 @@ export default function Modal(props) {
 								<p className="mt-2 text-grey-200 text-xs md:text-sm">Abilities</p>
 							</div>
 						</div>
-						<h4 className={`details-container__title flex justify-center text-${colorClass} font-bold mb-1`}>Base Stats</h4>
+						<h4 className={`details-container__title flex justify-center text-${colorClass} font-bold mb-1 sm:mb-4`}>Base Stats</h4>
 						{/* Calls pokemonType function again to set the default color to the first type (if pokemon has more than 1 type) */}
 						{pokemonType(type)}
                         {pokemon[0].stats.map((stat) => {
@@ -123,7 +123,7 @@ export default function Modal(props) {
                             statName(name)
 
 							return (
-								<div className="details-container__stat flex justify-center align-center lg:m-3">  
+								<div className="details-container__stat flex justify-center align-center sm:mx-3">  
                                     <p className="flex items-end mr-3 w-10 text-sm">{newStatLabel}</p>
 									<div
 										ref={containerRef}
