@@ -15,7 +15,7 @@ export default function PokemonCard(props) {
 	if (pokemonData.length > 0) {
 		return (
 			<>
-				<div className="pokemon-cards grid grid-cols-1 mx-[50px] sm:grid-cols-2 md:grid-cols-4 gap-20">
+				<div className="pokemon-cards grid grid-cols-1 mx-[50px] sm:grid-cols-2 lg:grid-cols-4 gap-20">
 					{pokemonData.map((pokemon) => (
 						<div
 							className="relative width[100px] md:max-w-sm border-solid border-2 border-grey-100 rounded-2xl overflow-visible shadow-lg h-28 md:my-6 flex items-center justify-around"
