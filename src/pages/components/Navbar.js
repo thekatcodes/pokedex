@@ -3,7 +3,7 @@ import Image from "next/image";
 import Filter from "./Filter";
 
 export default function Navbar(props) {
-	const { fetchPokemon } = props;
+	const { fetchPokemon, fetchFilter } = props;
 
 	const [searchValue, setSearchValue] = useState("");
 
@@ -34,7 +34,7 @@ export default function Navbar(props) {
 				placeholder="Search Pokémon"
 				onChange={(event) => searchInput(event)}
             ></input>
-            <Filter />
+            <Filter fetchFilter={fetchFilter}/>
 		</div>
 	);
 }
