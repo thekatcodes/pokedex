@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import Image from "next/image";
+import Filter from "./Filter";
 
 export default function Navbar(props) {
 	const { fetchPokemon } = props;
@@ -32,7 +33,8 @@ export default function Navbar(props) {
 				value={searchValue}
 				placeholder="Search Pokémon"
 				onChange={(event) => searchInput(event)}
-			></input>
+            ></input>
+            <Filter />
 		</div>
 	);
 }
