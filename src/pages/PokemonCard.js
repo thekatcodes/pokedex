@@ -21,13 +21,13 @@ export default function PokemonCard(props) {
 							className="transition duration-300 ease-in-out hover:scale-110 pokemon-cards__card relative width[100px] md:max-w-sm border-solid border-2 border-grey-100 rounded-2xl overflow-visible shadow-lg h-28 md:my-6 flex items-center justify-around"
 							key={pokemon.id}
 						>
-							<div className="absolute top-3 -left-8 md:-left-6 w-1/2 h-full overflow-visible">
+							<div className="absolute top-3 -left-8 sm:-left-6 w-1/2 h-full overflow-visible">
 								<img
-									className="absolute md:-top-4 left-0 z-1 w-[100px] md:w-[130px] "
+									className="absolute sm:-top-[1.5em] left-0 z-1 w-[100px] sm:w-[130px] "
 									src={pokemon.sprites.other['official-artwork'].front_default}
 								/>
 							</div>
-							<div className="pokemon-cards__name flex flex-col ml-5 pt-5 pb-5 z-0 text-center">
+							<div className="pokemon-cards__name flex flex-col sm:ml-[3.25em] pt-5 pb-5 z-0 text-center">
 								<p>
 									#
 									{pokemon.id < 10
