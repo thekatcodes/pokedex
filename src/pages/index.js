@@ -34,16 +34,16 @@ function HomePage() {
 						"Accept-Encoding": "identity",
 					},
 				});
-                console.log(result.data.results);
-                
+				console.log(result.data.results);
+
 				// Create new empty array (defaultData) and for each of the 20 pokemon, make get request to their specific api endpoint and push the retrieved data to defaultData array
 				let defaultData = [];
 				for (let i = 0; i < result.data.results.length; i++) {
 					const newResult = await axios.get(result.data.results[i].url);
 					defaultData.push(newResult.data);
 				}
-                console.log(defaultData);
-                // setPokemonData state with defaultData array that contains all 20 pokemons data
+				console.log(defaultData);
+				// setPokemonData state with defaultData array that contains all 20 pokemons data
 				setPokemonData(defaultData);
 			} catch (error) {
 				console.log(error);
@@ -53,9 +53,46 @@ function HomePage() {
 
 	console.log("INDEX", pokemonData);
 
+	const fetchFilter = async (value) => {
+		if (value) {
+			try {
+				const result = await axios.get(
+					`https://pokeapi.co/api/v2/type/${value}`
+				);
+				const pokemonList = result.data.pokemon;
+				// // Create new empty array (defaultData) and for each of the 20 pokemon, make get request to their specific api endpoint and push the retrieved data to defaultData array
+				// let defaultData = [];
+				// for (let i = 0; i < result.data.results.length; i++) {
+				// 	const newResult = await axios.get(result.data.results[i].url);
+				// 	defaultData.push(newResult.data);
+				// }
+				// console.log(defaultData);
+				// // setPokemonData state with defaultData array that contains all 20 pokemons data
+				// setPokemonData(defaultData);
+
+				let filterData = [];
+				pokemonList.map(async (item) => {
+					// slice out alternate forms and megas
+
+					const result = await axios.get(item.pokemon.url);
+                    filterData.push(result);
+                    console.log(item.pokemon.url)
+				});
+				setPokemonData(filterData);
+			} catch (e) {
+				console.log(e);
+			}
+		}
+	};
+
+	console.log("FILTER AFTER", pokemonData);
+
 	return (
 		<>
-			<Navbar fetchPokemon={fetchPokemon} />
+			<Navbar
+				fetchPokemon={fetchPokemon}
+				fetchFilter={fetchFilter}
+			/>
 			<PokemonCard
 				pokemonData={pokemonData}
 				fetchPokemon={fetchPokemon}
