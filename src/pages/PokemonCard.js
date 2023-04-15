@@ -16,7 +16,9 @@ export default function PokemonCard(props) {
 		return (
 			<>
 				<div className="pokemon-cards grid grid-cols-1 mx-[50px] sm:grid-cols-2 lg:grid-cols-4 gap-20 sm:gap-[3em]">
-					{pokemonData.map((pokemon) => (
+                    {pokemonData
+                        .filter((pokemon) => pokemon.id < 1000)
+                        .map((pokemon) => (
 						<div
 							className="transition duration-300 ease-in-out hover:scale-110 pokemon-cards__card relative width[100px] md:max-w-sm border-solid border-2 border-grey-100 rounded-2xl overflow-visible shadow-lg h-28 md:my-6 flex items-center justify-around"
 							key={pokemon.id}
