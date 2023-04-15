@@ -1,7 +1,11 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 
-export default function Filter() {
-  const [showMenu, setShowMenu] = useState(false);
+export default function Filter(props) {
+    const { fetchFilter } = props;
+    const [showMenu, setShowMenu] = useState(false);
+    const [filterValue, setFilterValue] = useState("");
+
+    console.log(filterValue)
 
   const types = [
     { name: "bug" },
@@ -27,6 +31,11 @@ export default function Filter() {
   const toggleMenu = () => {
     setShowMenu(!showMenu);
   };
+    
+  
+  useEffect(() => {
+    fetchFilter(filterValue);
+}, [filterValue]);
 
   return (
     <div>
@@ -69,8 +78,9 @@ export default function Filter() {
           {types.map((type) => (
             <li key={type.name}>
               <a
-                href="#"
-                className="block px-4 py-2 capitalize hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-grey-200"
+                      href="#"
+                      className="block px-4 py-2 capitalize hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-grey-200"
+                      onClick={() => { setFilterValue(type.name)}}
               >
                 {type.name}
               </a>
