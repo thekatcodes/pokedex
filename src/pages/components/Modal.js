@@ -66,12 +66,12 @@ export default function Modal(props) {
 								: pokemon[0].id}
 						</p>
 					</div>
+					<div className="modal details-container relative bg-white p-3 m-2 rounded-2xl h-[400px]  sm:h-[510px] mt-20">
 					<img
 						src={pokemon[0].sprites.other["official-artwork"].front_default}
 						alt={pokemon[0].name}
-						className="modal__image absolute top-[12em] left-0 right-0 m-auto sm:top-[8em] w-[150px] sm:w-[190px]"
+						className="modal__image absolute -top-[6em] left-0 right-0 m-auto sm:-top-[7em] w-[150px] sm:w-[190px]"
 					/>
-					<div className="modal details-container bg-white p-3 m-2 rounded-2xl h-[400px]  sm:h-[510px] mt-20">
 						<div className="details-container__type flex justify-center mt-10 sm:mt-20 mb-3">
 							{pokemon[0].types.map((type) => {
 								console.log(type.type.name);
