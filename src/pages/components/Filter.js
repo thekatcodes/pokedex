@@ -68,7 +68,7 @@ export default function Filter(props) {
         id="dropdown"
         className={`absolute z-10 ${
           showMenu ? "block" : "hidden"
-        } bg-white divide-y divide-gray-100 rounded-lg shadow w-[6rem] right-[0.5em]`}
+        } bg-white divide-y divide-gray-100 rounded-lg shadow w-[6.5rem] right-[0.5em]`}
         style={{ maxHeight: "200px", overflowY: "auto" }}
           >
         <ul
@@ -77,13 +77,13 @@ export default function Filter(props) {
         >
           {types.map((type) => (
             <li key={type.name}>
-              <a
-                      href="#"
+              <button
+                    
                       className="block px-4 py-2 capitalize hover:bg-gray-100 dark:hover:bg-gray-600 dark:hover:text-grey-200"
                       onClick={() => { setFilterValue(type.name)}}
               >
                 {type.name}
-              </a>
+              </button>
             </li>
           ))}
         </ul>
