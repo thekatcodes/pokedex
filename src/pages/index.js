@@ -51,24 +51,30 @@ function HomePage() {
 		}
 	};
 
-	console.log("INDEX", pokemonData);
+    console.log("INDEX", pokemonData);
+    
+    // useEffect(() => {
+    //     console.log('pokemonData after update', pokemonData);
+    //   }, [pokemonData]);
 
+
+	// Function to fetch pokemon data by type & set pokemon state
 	const fetchFilter = async (value) => {
 		if (value) {
 			try {
 				const result = await axios.get(
 					`https://pokeapi.co/api/v2/type/${value}`
-				);
+                );
+                
 				const pokemonList = result.data.pokemon;
-
 				let filterData = [];
-				pokemonList.map(async (item) => {
+				await Promise.all(pokemonList.map(async (item) => {
 					const result = await axios.get(item.pokemon.url);
                     filterData.push(result.data);
                     console.log(item.pokemon.url)
-				});
+				}));
                 setPokemonData(filterData);
-                console.log(pokemonData)
+                console.log('filterData', filterData)
 			} catch (e) {
 				console.log(e);
 			}
