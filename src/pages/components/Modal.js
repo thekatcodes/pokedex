@@ -42,7 +42,7 @@ export default function Modal(props) {
 		<div className="modal modal--open fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center">
 			<div className=" modal__container w-[350px] sm:w-[500px] flex flex-col">
 				<div
-					className={`modal__header bg-${colorClass} h-[540px] sm:h-[650px] p-2 rounded-2xl`}
+					className={`modal__header bg-${colorClass} h-[590px] sm:h-[650px] p-2 rounded-2xl`}
 				>
 					<div className="flex justify-between align-center m-3 text-white">
 						<div className="flex">
@@ -66,7 +66,7 @@ export default function Modal(props) {
 								: pokemon[0].id}
 						</p>
 					</div>
-					<div className="modal details-container relative bg-white p-3 m-2 rounded-2xl h-[400px]  sm:h-[510px] mt-20">
+					<div className="modal details-container relative bg-white p-3 m-2 rounded-2xl h-[430px]  sm:h-[510px] mt-[6em]">
 					<img
 						src={pokemon[0].sprites.other["official-artwork"].front_default}
 						alt={pokemon[0].name}
