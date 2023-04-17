@@ -26,7 +26,7 @@ export default function Navbar(props) {
             height={50}
                 className='navbar__logo ml-4 absolute'
             />
-			<h1 className="navbar__logo-name absolute text-white ml-4 left-16">Pokedex</h1>
+			<h1 className="navbar__logo-name absolute text-white ml-4 left-16">Pokédex</h1>
 			<input
 				className="navbar__search px-4 py-3 mx-auto rounded-full"
 				type="search"
