@@ -37,7 +37,7 @@ export default function Filter(props) {
 	}, [filterValue]);
 
 	return (
-		<div>
+		<div className="absolute right-0">
 			<button
 				id="dropdownDefaultButton"
 				data-dropdown-toggle="dropdown"
