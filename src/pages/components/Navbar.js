@@ -11,7 +11,8 @@ export default function Navbar(props) {
 	const searchInput = (event) => {
 		setSearchValue(event.target.value);
 	};
-	console.log(searchValue);
+    console.log(searchValue);
+    
 	// useEffect listens for changes to the searchValue state, when it changes, it calls the fetchPokemon function with the new searchValue
 	useEffect(() => {
 		fetchPokemon(searchValue);
