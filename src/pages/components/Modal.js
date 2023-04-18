@@ -43,7 +43,7 @@ export default function Modal(props) {
 		<div className="modal modal--open fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center">
 			<div className=" modal__container w-[350px] sm:w-[500px] flex flex-col">
 				<div
-					className={`modal__header bg-${colorClass} h-[590px] sm:h-[650px] p-2 rounded-2xl`}
+					className={`modal__header bg-${colorClass} h-[590px] sm:h-[670px] p-2 rounded-2xl`}
 				>
 					<div className="flex justify-between align-center m-3 text-white">
 						<div className="flex">
