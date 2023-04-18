@@ -12,7 +12,7 @@ export default function Modal(props) {
 	const [containerWidth, setContainerWidth] = useState(0);
 	console.log(pokemon);
 
-	// Get pixel width of the container with useRef, useEffect hook  and offsetWidth
+	// Get pixel width of the container with useRef, useEffect hook and offsetWidth
 	const containerRef = useRef(null);
 
 	useEffect(() => {
@@ -28,16 +28,17 @@ export default function Modal(props) {
 	// type variable contains the first type of the pokemon
 	const type = pokemon[0].types[0].type.name;
 	pokemonType(type);
-	console.log(pokemon[0].types[0].type.name);
+	// console.log(pokemon[0].types[0].type.name);
 
 	// let progressHP = containerWidth * pokemon[0].stats[0].base_stat/255
 	// console.log('PROGRESS', progressHP)
-	console.log("CONTAINER AFTER", containerWidth);
+	// console.log("CONTAINER AFTER", containerWidth);
 
-	console.log(
-		"MATH",
-		Math.floor((containerWidth * pokemon[0].stats[0].base_stat) / 255)
-	);
+	// console.log(
+	// 	"MATH",
+	// 	Math.floor((containerWidth * pokemon[0].stats[0].base_stat) / 255)
+    // );
+    
 	return (
 		<div className="modal modal--open fixed inset-0 bg-black bg-opacity-25 backdrop-blur-sm flex justify-center items-center">
 			<div className=" modal__container w-[350px] sm:w-[500px] flex flex-col">
